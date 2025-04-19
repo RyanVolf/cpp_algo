@@ -1,0 +1,55 @@
+Write a program to work with the Disjoint Set Union (DSU) data structure, which manages sets that do not intersect, and processes queries of the following types:
+
+RESET N — create a new series of sets: a set containing only element 0, a set containing only element 1, and so on, up to a set containing only element N-1.
+
+If the structure already contained any sets, they are all destroyed.
+
+As a result of this command, print two words separated by a space: RESET DONE.
+
+JOIN X Y — merge the sets containing elements X and Y.
+
+If these elements already belong to the same set, print the word ALREADY, followed by a space and the numbers X and Y in the same order.
+
+If the elements do not belong to different sets, no output is needed (just merge the sets).
+
+CHECK X Y — check if elements X and Y belong to the same set.
+
+Print YES if they belong to the same set, and NO if they belong to different sets.
+
+Input Format
+The input consists of a sequence of RESET, JOIN, and CHECK queries, each on a separate line.
+
+It is guaranteed that the first line contains a RESET query, and the total number of RESET queries does not exceed 5.
+
+The total number of all queries does not exceed 20,000.
+
+The value of N in each query does not exceed 100,000.
+
+In each JOIN and CHECK query, both numbers will be in the range from 0 to N-1, where N is the parameter of the last RESET query.
+
+Output Format
+For RESET queries, CHECK queries, and those JOIN queries where the elements already belong to the same set, print the corresponding query result.
+
+Example Input
+
+RESET 15
+JOIN 14 10
+JOIN 13 8
+JOIN 0 9
+JOIN 8 3
+JOIN 4 1
+JOIN 10 5
+JOIN 8 4
+CHECK 2 11
+JOIN 4 1
+JOIN 2 6
+CHECK 9 1
+JOIN 6 5
+CHECK 10 5
+Example Output
+
+RESET DONE
+NO
+ALREADY 4 1
+NO
+YES
